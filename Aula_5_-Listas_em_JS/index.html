@@ -3,16 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <title>Menu Lista Encadeada</title>
-<link href="style.css" rel="stylesheet">
 </head>
+<style>
+body {
+    background-color: black;
+    background-image: radial-gradient(
+      rgba(0, 150, 0, 0.75), black 120%
+    );
+    color: white;
+    font-family: 'Inconsolata', monospace;
+    font-size: 12px;
+    text-shadow: 0 0 5px #C8C8C8;
+    position: relative;
+  }
+  
+  #container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+  }
+  
+  #container-text-and-input{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  #output {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 40px;
+    overflow-y: auto;
+    background-color: black;
+    background-image: radial-gradient(
+      rgba(0, 150, 0, 0.75), black 120%
+    );
+    height: 80vh;
+    width: 100vh;
+    overflow: hidden;
+    color: white;
+    font-family: 'Inconsolata', monospace;
+    font-size: 12px;
+    text-shadow: 0 0 5px #C8C8C8;
+  }
+  
+  ::selection {
+    background: #0080FF;
+    text-shadow: none;
+  }
+  
+  #opcaoInput {
+    font-family: 'Inconsolata', monospace;
+    border: 2px solid #ccc;
+    height: 40px;
+  }
+  
+  #enviarBtn {
+    font-family: 'Inconsolata', monospace;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    width: 80px;
+    height: 50px;
+  }
+  </style>
 <body>
     <div id="container">
-        <div>
+        <div id="container-text-and-input">
         <h1>TAD: Listas</h1>
-        <div id="menu"></div>
-        <input type="text" id="opcaoInput" placeholder="Digite a opção">
-        <button id="enviarBtn">Enviar</button>
-        </div>
+            <div id="menu"></div>
+                <div>
+                <input type="text" id="opcaoInput" placeholder="Digite a opção">
+                <button id="enviarBtn">Enviar</button>
+                </div>
+            </div>
         <div id="output"></div>
     </div>
     
@@ -344,7 +408,7 @@
 
             exibirMenu() {
                 const menuHTML = `
-                    <p>-----------------------------------------------</p>
+                    <p>----------------------------------------------------</p>
                     <p>1 - Inserir no início da Lista</p>
                     <p>2 - Inserir no final da Lista</p>
                     <p>3 - Inserir em posição específica da Lista</p>
@@ -363,7 +427,7 @@
                     <p>16 - Apagarvalores entre X e Y</p>
                     <p>17 - Remover os X primeiros valores da Lista</p>
                     <p>99 - Sair</p>
-                    <p>-----------------------------------------------</p>
+                    <p>----------------------------------------------------</p>
                 `;
                 document.getElementById('menu').innerHTML = menuHTML;
             }
